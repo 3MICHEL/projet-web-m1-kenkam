@@ -19,12 +19,12 @@ import {
   import Row from '../components/Row';
   import DrawerExample from '../components/DrawerExample';
   
-  function Book() {
-    const { FetchUsers, Search, users, onOpen, isOpen, onClose } =
+  function Author() {
+    const { FetchUsers, Search, author, onOpen, isOpen, onClose } =
       useContext(GlobalContext);
     const [query, setQuery] = useState('');
     useEffect(() => {
-      FetchUsers();
+        FetchUsers();
     }, []);
     const SearchHandler = () => {
       Search(query);
@@ -55,7 +55,7 @@ import {
           <Box mt="5" rounded={'lg'} boxShadow="base">
             <Box p="4" display={'flex'} justifyContent="space-between">
               <Text fontSize="xl" fontWeight="bold">
-                Liste Livres
+                Liste Auteurs
               </Text>
               <Button
                 colorScheme="teal"
@@ -72,20 +72,19 @@ import {
               <Table variant="simple">
                 <Thead>
                   <Tr>
-                    <Th>Photo</Th>
+                    <Th>Profil</Th>
                     <Th>Noms</Th>
-                    <Th>Auteur</Th>
-                  </Tr>
+                    <Th>Prenoms</Th>
+                    </Tr>
                 </Thead>
                 <Tbody>
-                  {users?.map(({ _id, fullname, email, age, country }) => {
+                  {author?.map(({ _id, firstname, lastname }) => {
                     return (
                       <Row
                         id={_id}
-                        fullname={fullname}
-                        email={email}
-                        age={age}
-                        country={country}
+                        firstname={firstname}
+                        lastname={lastname}
+                        
                       />
                     );
                   })}
@@ -99,5 +98,5 @@ import {
     );
   }
   
-  export default Book;
+  export default Author;
   
