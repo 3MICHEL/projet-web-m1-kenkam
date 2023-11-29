@@ -14,13 +14,14 @@ import {
   } from '@chakra-ui/react';
   import { FormControl } from '@chakra-ui/react';
   import { useContext, useEffect, useState } from 'react';
-  import { GlobalContext } from '../context/GlobalWrapper';
+  import { GlobalContext } from '../context/GlobalWrapperAuthor';
   import { AiOutlinePlus, AiOutlineSearch } from 'react-icons/ai';
+  // import RowAuthor from '../components/RowAuthor';
   import Row from '../components/Row';
-  import DrawerExample from '../components/DrawerExample';
+  import DrawerAuthor from '../components/DrawerAuthor';
   
   function Author() {
-    const { FetchUsers, Search, author, onOpen, isOpen, onClose } =
+    const { FetchUsers, Search, user, onOpen, isOpen, onClose } =
       useContext(GlobalContext);
     const [query, setQuery] = useState('');
     useEffect(() => {
@@ -78,7 +79,7 @@ import {
                     </Tr>
                 </Thead>
                 <Tbody>
-                  {author?.map(({ _id, firstname, lastname }) => {
+                  {/* {user?.map(({ _id, firstname, lastname }) => {
                     return (
                       <Row
                         id={_id}
@@ -87,12 +88,12 @@ import {
                         
                       />
                     );
-                  })}
+                  })} */}
                 </Tbody>
               </Table>
             </TableContainer>
           </Box>
-          <DrawerExample />
+          <DrawerAuthor />
         </Container>
       </div>
     );

@@ -1,12 +1,19 @@
 # complete-projet-nest-react
 
-# 1- Backend (5000 port)
-vous devez changez le lien de MONGO_URI a l interieur du fichier .env avec votre lien URI
+# 1- Backend (port 5000)
+- Installez mongoDB server et/ou mongoDB compas () et remplacer l'URI de connexion dans le fichier .env.
+- Installez les configurations globales (npm install) dans un nouveau terminal.
+- Demarez le serveur dans un terminal (npm run api:start:dev).
 
-ensuite taper : run npm install and npm run start:dev
+# 2- Frontend (port 3000)
+- Installez les configurations globales (npm install) dans un nouveau terminal.
+- Demarez le serveur dans un terminal (npm run site:dev).
 
-# 2- Frontend (3000 port)
+# 3- Test-Backend 
+- Intallez postman.
+- Testez toutes les methodes des controller de chaque model (CRUD + fonctionalites).
 
-run npm install and npm start
+# 4- Deploiement
+- Lien github : "".
 
 

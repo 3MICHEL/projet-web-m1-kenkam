@@ -7,4 +7,6 @@ export class CreateAuthorDto {
   @IsNotEmpty()
   lastname: string;
 
+  photoId: string;
+
 }

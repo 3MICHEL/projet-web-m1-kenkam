@@ -11,7 +11,7 @@ export default function Wrapper({ children }) {
   const toast = useToast();
   const FetchUsers = () => {
     axios
-      .get('/api/users')
+      .get('/api/books')
       .then((res) => {
         setUsers(res.data);
       })
@@ -22,7 +22,7 @@ export default function Wrapper({ children }) {
 
   const Search = (query) => {
     axios
-      .post(`/api/users/search?key=${query}`)
+      .post(`/api/books/search?key=${query}`)
       .then((res) => {
         setUsers(res.data);
       })
@@ -33,11 +33,11 @@ export default function Wrapper({ children }) {
 
   const Delete = (id) => {
     axios
-      .delete(`/api/users/${id}`)
+      .delete(`/api/books/${id}`)
       .then((res) => {
         setUsers(users.filter((u) => u._id != id));
         toast({
-          title: 'Utilisateur Supprimé',
+          title: 'Livre Supprimé',
           status: 'success',
           duration: 4000,
           isClosable: true,
@@ -50,11 +50,11 @@ export default function Wrapper({ children }) {
 
   const Add = (form, setForm) => {
     axios
-      .post('/api/users', form)
+      .post('/api/books', form)
       .then((res) => {
         setUsers([...users, res.data]);
         toast({
-          title: 'Utilisateur Ajouté',
+          title: 'Livre Ajouté',
           status: 'success',
           duration: 4000,
           isClosable: true,
@@ -70,7 +70,7 @@ export default function Wrapper({ children }) {
 
   const FindOne = async (id) => {
     await axios
-      .get(`/api/users/${id}`)
+      .get(`/api/books/${id}`)
       .then((res) => {
         setUser(res.data);
       })
@@ -81,10 +81,10 @@ export default function Wrapper({ children }) {
 
   const Update = (form, setForm, id) => {
     axios
-      .put(`/api/users/${id}`, form)
+      .put(`/api/books/${id}`, form)
       .then((res) => {
         toast({
-          title: 'Utilisateur modifié',
+          title: 'Livre modifié',
           status: 'success',
           duration: 4000,
           isClosable: true,

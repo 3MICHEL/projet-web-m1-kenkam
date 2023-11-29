@@ -8,9 +8,7 @@ import { Author, AuthorDocument } from './entities/author.entity';
 
 @Injectable()
 export class AuthorsService {
-  //remove(arg0: number) {
-  //   throw new Error('Method not implemented.');
-  // }
+  
   constructor(@InjectModel(Author.name) private userModel: Model<AuthorDocument>) {}
   Add(body: CreateAuthorDto) {
     return this.userModel.create(body);

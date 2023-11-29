@@ -48,7 +48,7 @@ export default function DrawerExample() {
               setForm({});
             }}
           />
-          <DrawerHeader>Create / Update user</DrawerHeader>
+          <DrawerHeader>Creé/modifié utilisateur</DrawerHeader>
 
           <DrawerBody>
             <Stack spacing={'24px'}>
@@ -89,13 +89,13 @@ export default function DrawerExample() {
                 setForm({});
               }}
             >
-              Cancel
+              Annuler
             </Button>
             <Button
               colorScheme="blue"
               onClick={() => (form._id ? onUpdate() : onAdd())}
             >
-              Save
+              Enregistrer
             </Button>
           </DrawerFooter>
         </DrawerContent>
