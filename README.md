@@ -1,4 +1,6 @@
 # complete-projet-nest-react
+- KENKAM KENGNE MICHEL ULRICH
+- KANA TATANG JULIEN
 
 # 1- Backend (port 5000)
 - Installez mongoDB server et/ou mongoDB compas () et remplacer l'URI de connexion dans le fichier .env.
@@ -31,6 +33,6 @@
 - Rechercher Auteur
 
 # 5- Deploiement
-- Lien github : "".
+- Lien github : "https://github.com/3MICHEL/projet-web-m1-kenkam.git".
 
 
