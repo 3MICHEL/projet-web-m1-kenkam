@@ -1,10 +1,10 @@
 import { Avatar, Box, Button, Td, Tr } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
-import { GlobalContext } from '../context/GlobalWrapperAuthor';
+import { GlobalContextAuthor } from '../context/GlobalWrapperAuthor';
 
-const RowAuthor = ({ id, firstname, lastname}) => {
-  const { Delete, onOpen, FindOne } = useContext(GlobalContext);
+const RowAuthor = ({ id,firstname,lastname}) => {
+  const { Delete, onOpen, FindOne } = useContext(GlobalContextAuthor);
   return (
     <Tr>
       <Td>

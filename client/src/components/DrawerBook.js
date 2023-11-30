@@ -15,7 +15,7 @@ import {
   import InputsGroup from './InputsGroup';
   
   export default function DrawerBook() {
-    const { onOpen, isOpen, onClose, Add, errors, setErrors, user, Update } =
+    const { onOpen, isOpen, onClose, Add, errors, setErrors, book, Update } =
       useContext(GlobalContext);
     const [form, setForm] = useState({});
     const onChangeHandler = (e) => {
@@ -34,8 +34,8 @@ import {
     };
   
     useEffect(() => {
-      setForm(user);
-    }, [user]);
+      setForm(book);
+    }, [book]);
     return (
       <>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose}>

@@ -2,6 +2,7 @@ import {BrowserRouter, Navigate, Routes,Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import User from './views/user';
 import Author from './views/author'
+import Book from './views/book';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<User/>} />
         <Route path='/authors' element={<Author/>} />
-        <Route path='/books' element={<User/>} />
+        <Route path='/books' element={<Book/>} />
       </Routes>
       </BrowserRouter>
           </div>

@@ -16,11 +16,11 @@ import {
   import { useContext, useEffect, useState } from 'react';
   import { GlobalContext } from '../context/GlobalWrapper';
   import { AiOutlinePlus, AiOutlineSearch } from 'react-icons/ai';
-  import Row from '../components/Row';
-  import DrawerExample from '../components/DrawerExample';
+  import RowBook from '../components/RowBook';
+  import DrawerBook from '../components/DrawerBook';
   
   function Book() {
-    const { FetchUsers, Search, users, onOpen, isOpen, onClose } =
+    const { FetchUsers, Search, books, onOpen, isOpen, onClose } =
       useContext(GlobalContext);
     const [query, setQuery] = useState('');
     useEffect(() => {
@@ -73,19 +73,18 @@ import {
                 <Thead>
                   <Tr>
                     <Th>Photo</Th>
-                    <Th>Noms</Th>
+                    <Th>Titre</Th>
                     <Th>Auteur</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {users?.map(({ _id, fullname, email, age, country }) => {
+                  {books?.map(({_id,name,author}) => {
                     return (
-                      <Row
+                      <RowBook
                         id={_id}
-                        fullname={fullname}
-                        email={email}
-                        age={age}
-                        country={country}
+                        name={name}
+                        author={author}
+                        
                       />
                     );
                   })}
@@ -93,7 +92,7 @@ import {
               </Table>
             </TableContainer>
           </Box>
-          <DrawerExample />
+          <DrawerBook />
         </Container>
       </div>
     );

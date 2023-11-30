@@ -11,12 +11,12 @@ import {
     Stack,
   } from '@chakra-ui/react';
   import { useContext, useEffect, useState } from 'react';
-  import { GlobalContext } from '../context/GlobalWrapperAuthor';
+  import { GlobalContextAuthor } from '../context/GlobalWrapperAuthor';
   import InputsGroup from './InputsGroup';
   
   export default function DrawerAuthor() {
-    const { onOpen, isOpen, onClose, Add, errors, setErrors, user, Update } =
-      useContext(GlobalContext);
+    const { onOpen, isOpen, onClose, Add, errors, setErrors, author, Update } =
+      useContext(GlobalContextAuthor);
     const [form, setForm] = useState({});
     const onChangeHandler = (e) => {
       setForm({
@@ -34,8 +34,8 @@ import {
     };
   
     useEffect(() => {
-      setForm(user);
-    }, [user]);
+      setForm(author);
+    }, [author]);
     return (
       <>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -59,10 +59,10 @@ import {
                   errors={errors?.firstname}
                 />
                 <InputsGroup
-                  name="Lastname"
+                  name="lastname"
                   onChangeHandler={onChangeHandler}
-                  value={form?.Lastname}
-                  errors={errors?.Lastname}
+                  value={form?.lastname}
+                  errors={errors?.lastname}
                 />
                
               </Stack>

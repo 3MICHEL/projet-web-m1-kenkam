@@ -13,7 +13,24 @@
 - Intallez postman.
 - Testez toutes les methodes des controller de chaque model (CRUD + fonctionalites).
 
-# 4- Deploiement
+# 4- Fonctionalites Backend
+- Ajout utilisateur
+- Ajout Auteur
+- Ajout livre
+- Detail utilisateur
+- Detail livre
+- Detail Auteur
+- Modifier livre
+- Modifier Auteur
+- Modifier utilisateur
+- Supprimer utilisateur
+- Supprimer livre
+- Supprimer Auteur
+- Rechercher utilisateur
+- Rechercher livre
+- Rechercher Auteur
+
+# 5- Deploiement
 - Lien github : "".
 
 

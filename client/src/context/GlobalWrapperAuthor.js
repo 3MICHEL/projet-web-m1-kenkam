@@ -1,19 +1,19 @@
 import { createContext, useState } from 'react';
 import axios from 'axios';
 import { useDisclosure, useToast } from '@chakra-ui/react';
-export const GlobalContext = createContext();
+export const GlobalContextAuthor = createContext();
 
 export default function Wrapper({ children }) {
-  const [users, setUsers] = useState([]);
+  const [authors, setAuthors] = useState([]);
   const [user, setUser] = useState({});
   const [errors, setErrors] = useState({});
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
-  const FetchUsers = () => {
+  const FetchAuthor = () => {
     axios
       .get('/api/authors')
       .then((res) => {
-        setUsers(res.data);
+        setAuthors(res.data);
       })
       .catch((err) => {
         console.log(err.reponse.data);
@@ -24,7 +24,7 @@ export default function Wrapper({ children }) {
     axios
       .post(`/api/authors/search?key=${query}`)
       .then((res) => {
-        setUsers(res.data);
+        setAuthors(res.data);
       })
       .catch((err) => {
         console.log(err.reponse.data);
@@ -35,7 +35,7 @@ export default function Wrapper({ children }) {
     axios
       .delete(`/api/authors/${id}`)
       .then((res) => {
-        setUsers(users.filter((u) => u._id != id));
+        setAuthors(authors.filter((u) => u._id != id));
         toast({
           title: 'Auteur Supprimé',
           status: 'success',
@@ -52,7 +52,7 @@ export default function Wrapper({ children }) {
     axios
       .post('/api/authors', form)
       .then((res) => {
-        setUsers([...users, res.data]);
+        setAuthors([...authors, res.data]);
         toast({
           title: 'Auteur Ajouté',
           status: 'success',
@@ -92,32 +92,32 @@ export default function Wrapper({ children }) {
         setErrors({});
         setForm({});
         onClose();
-        FetchUsers();
+        FetchAuthor();
       })
       .catch((err) => {
         setErrors(err.response.data.error);
       });
   };
   return (
-    <GlobalContext.Provider
+    <GlobalContextAuthor.Provider
       value={{
-        FetchUsers,
+        FetchAuthor,
         Search,
         Delete,
         Add,
         FindOne,
         Update,
-        users,
+        authors,
         onOpen,
         isOpen,
         onClose,
         errors,
         setErrors,
         user,
-        setUser,
+        setAuthors,
       }}
     >
       {children}
-    </GlobalContext.Provider>
+    </GlobalContextAuthor.Provider>
   );
 }
